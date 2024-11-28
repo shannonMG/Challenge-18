@@ -1,17 +1,14 @@
 import {gql} from '@apollo/client';
 
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      username
+export const LOGIN_USER = gql`
+
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    user {
       email
-      thoughts {
-        _id
-        thoughtText
-        thoughtAuthor
-        createdAt
-      }
+      username
     }
   }
-`;
+}`
+
