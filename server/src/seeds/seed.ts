@@ -1,5 +1,5 @@
-import db from '../config/connection.js'; // Adjusted relative path
-import User from '../models/User.js'; // Adjusted relative path
+import db from '../config/connection.js';
+import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 
 // Seed data
@@ -13,12 +13,12 @@ const seedDatabase = async () => {
   try {
     // Connect to MongoDB
     await db();
-
     console.log('✅ Connected to MongoDB');
 
     // Hash the password
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(seedUser.password, saltRounds);
+    console.log('Hashed Password:', hashedPassword); // Log hash for debugging
 
     // Add hashed password to the seed user data
     const userToInsert = { ...seedUser, password: hashedPassword };
