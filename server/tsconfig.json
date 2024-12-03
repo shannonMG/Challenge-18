@@ -1,14 +1,13 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",        // Output compiled files here
-    "rootDir": "./src",        // Root directory for TypeScript files
-    "module": "NodeNext",      // Module system for Node.js
-    "target": "ES6",           // Target ECMAScript version
-    "strict": true,            // Enable strict type checking
-    "esModuleInterop": true,   // Allow default imports for CommonJS modules
-    "skipLibCheck": true,      // Skip type checking of declaration files
-    "forceConsistentCasingInFileNames": true
+    /* Modules */
+    "rootDir": "src" /* Specify the root folder within your source files. */,
+
+    /* Emit */
+    "outDir": "dist" /* Specify an output folder for all emitted files. */
+    // "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
   },
-  "include": ["src/**/*.ts"],  // Include all TypeScript files in src/
-  "exclude": ["node_modules"]  // Exclude node_modules
+  "include": ["src"],
+  "typeRoots": ["./node_modules/@types", "./src/types"]
 }
