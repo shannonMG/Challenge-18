@@ -34,11 +34,11 @@ const startApolloServer = async () => {
   ));
 
   if (process.env.NODE_ENV === 'production') {                //serves files from client/dist folder if enironment is in production
-        app.use(express.static(path.join(__dirname, '../client/dist')));  
-
-    app.get('*', (_req: Request, res: Response) => {          // servers index.html for any request not being handled elsewhere
+    app.use(express.static(path.join(__dirname, '../client/dist')));
+    app.get('*', (_req: Request, res: Response) => {
       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
+    
   }
 
   app.listen(PORT, () => {
