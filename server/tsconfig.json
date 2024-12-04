@@ -1,20 +1,13 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "es2020",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "outDir": "./dist",          // Compiled files go to "dist"
+    "rootDir": "./src",          // Source files are in "src"
+    "module": "CommonJS",        // Node.js uses CommonJS by default
+    "target": "ESNext",          // Latest JavaScript target
+    "moduleResolution": "Node", // Node-style resolution
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    /* Modules */
-    "rootDir": "src" /* Specify the root folder within your source files. */,
-
-    /* Emit */
-    "outDir": "dist", /* Specify an output folder for all emitted files. */
-    "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
+    "esModuleInterop": true
   },
-  "include": ["src"],
-  "typeRoots": ["./node_modules/@types", "./src/types"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
