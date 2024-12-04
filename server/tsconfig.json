@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist",          // Compiled files go to "dist"
     "rootDir": "./src",          // Source files are in "src"
-    "module": "CommonJS",        // Node.js uses CommonJS by default
+    "module": "ESNext",        // Node.js uses CommonJS by default
     "target": "ESNext",          // Latest JavaScript target
     "moduleResolution": "Node", // Node-style resolution
     "strict": true,

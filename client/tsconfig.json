@@ -3,7 +3,7 @@
     "outDir": "./dist",          // Ensure compiled files go to "dist"
     "rootDir": "./src",          // Source files are in "src"
     "module": "ESNext",          // ES module system
-    "moduleResolution": "Node", // Node-style resolution (or "Bundler" if Vite is used)
+    "moduleResolution": "Bundler", // Node-style resolution (or "Bundler" if Vite is used)
     "target": "ESNext",          // Latest JavaScript target
     "jsx": "react-jsx",          // For React (if you're using it)
     "strict": true,
