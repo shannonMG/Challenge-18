@@ -33,12 +33,15 @@ const startApolloServer = async () => {
     }
   ));
 
-  if (process.env.NODE_ENV === 'production') {                //serves files from client/dist folder if enironment is in production
+  if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
-    app.get('*', (_req: Request, res: Response) => {
-      res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
-    });
     
+    // Serve index.html for non-static file requests
+    app.get('*', (req: Request, res: Response) => {
+      if (!req.path.startsWith('/assets') && !req.path.endsWith('.js') && !req.path.endsWith('.css')) {
+        res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+      }
+    });
   }
 
   app.listen(PORT, () => {
