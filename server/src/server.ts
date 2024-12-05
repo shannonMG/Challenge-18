@@ -38,6 +38,7 @@ const startApolloServer = async () => {
     
     // Serve index.html for non-static file requests
     app.get('*', (req: Request, res: Response) => {
+      console.log(`Request for ${req.path}`);
       if (!req.path.startsWith('/assets') && !req.path.endsWith('.js') && !req.path.endsWith('.css')) {
         res.sendFile(path.join(__dirname, '../client/dist/index.html'));
       }
