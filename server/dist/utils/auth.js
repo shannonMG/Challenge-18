@@ -11,7 +11,7 @@ export const authenticateToken = ({ req }) => {
         return req;
     }
     try {
-        const { data } = jwt.verify(token, process.env.JWT_SECRET_KEY || '', { maxAge: '2hr' }); //verifies token for a max of 2hrs if token is vaild, decodes the payload and extracts a variable called data 
+        const { data } = jwt.verify(token, process.env.JWT_SECRET_KEY || 'superdupersecretkey', { maxAge: '2hr' }); //verifies token for a max of 2hrs if token is vaild, decodes the payload and extracts a variable called data 
         req.user = data; //atteches decoded payload (data) to the request object as req.user 
     }
     catch (err) { //if verification fails, catch an error : invalid token
